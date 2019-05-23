@@ -96,7 +96,7 @@ if(isset($_POST["Registreren"])){
             else if(check == false){
               document.getElementById("real").innerHTML += '<form action="SonoWebsite.php" method="post" id="real">';
               document.getElementById("real").innerHTML += 'UsernameA: <br><input type="text" name="Username" size="15px"><br>';
-              document.getElementById("real").innerHTML += 'PasswordA: <br><input type="text" name="Password" size="15px"><br>';
+              document.getElementById("real").innerHTML += 'PasswordA: <br><input type="password" name="Password" size="15px"><br>';
               document.getElementById("real").innerHTML += '<input type="submit" name="Inloggen" value="Log In" style="color: rgb(181, 255, 173); background-color: rgb(173, 204, 255); border: 2px solid;">';
               document.getElementById("real").innerHTML += '<input type="submit" name="Registreren" value="Register" style="color: rgb(181, 255, 173); background-color: rgb(173, 204, 255); border: 2px solid;">';
               document.getElementById("real").innerHTML += '<p id="TextLogin" style="text-align = center; margin-top: -10px;"></p>';

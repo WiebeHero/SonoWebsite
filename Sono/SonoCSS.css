@@ -1,0 +1,60 @@
+html{
+  background-color: rgb(147, 151, 255);
+}
+.loginModel{
+  border: 5px solid;
+  width: 400px;
+  height: 125px;
+  text-align: center;
+  margin-left: 1445px;
+}
+.teamLogo{
+  float: left;
+  margin-left: -1450px;
+  margin-top: -5px;
+}
+.registerBox{
+  float: right;
+  margin-top: 100px;
+}
+/* Style the header */
+.header {
+  position: fixed;
+  margin-left: -7px;
+  top: 0;
+  border: 5px solid;
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+  width: 1860px;
+  height: 135px;
+}
+.infoBoxUs{
+  margin-top: 400px;
+  margin-left: 500px;
+  border: 5px solid;
+  border-radius: 25px;
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+  width: 900px;
+  height: 900px;
+  text-align: center;
+
+}
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}

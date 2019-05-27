@@ -12,6 +12,9 @@ session_start();
 if(!isset($_SESSION['loggedInState'])){
   $_SESSION['loggedInState'] = false;
 }
+if(!isset($_SESSION['Username'])){
+  $_SESSION['Username'] = "";
+}
 echo "<script src='SonoScript.js'></script>";
 if(isset($_POST["Inloggen"])){
   if(isset($_POST["Username"]) && isset($_POST["Password"])){
@@ -29,9 +32,11 @@ if(isset($_POST["Inloggen"])){
         });
       </script>
       <?php
+      $_SESSION['Username'] = $username;
       $_SESSION['loggedInState'] = true;
     }
     else{
+      $_SESSION['Username'] = $username;
       $_SESSION["loggedInState"] = false;
       ?>
       <script type='text/javascript'>
@@ -89,9 +94,12 @@ if(isset($_POST["Registreren"])){
         </form>
         <script type='text/javascript'>
           var check = "<?php echo $_SESSION['loggedInState']; ?>";
+          var username = "<?php echo $_SESSION['Username']; ?>";
           function loginTrue(){
             if(check == true){
-              document.getElementById("real").innerHTML += 'Logged In!';
+              document.getElementById("real").innerHTML += '<br>Username: ' + username;
+              document.getElementById("real").innerHTML += '<br>Rank: ' + '';
+              document.getElementById("real").innerHTML += '<br>Rank: ';
             }
             else if(check == false){
               document.getElementById("real").innerHTML += '<form action="SonoWebsite.php" method="post" id="real">';
@@ -104,8 +112,8 @@ if(isset($_POST["Registreren"])){
             }
             else{
               document.getElementById("real").innerHTML += '<form action="SonoWebsite.php" method="post" id="real">';
-              document.getElementById("real").innerHTML += 'UsernameA: <br><input type="text" name="Username" size="15px"><br>';
-              document.getElementById("real").innerHTML += 'PasswordA: <br><input type="password" name="Password" size="15px"><br>';
+              document.getElementById("real").innerHTML += 'Username: <br><input type="text" name="Username" size="15px"><br>';
+              document.getElementById("real").innerHTML += 'Password: <br><input type="password" name="Password" size="15px"><br>';
               document.getElementById("real").innerHTML += '<input type="submit" name="Inloggen" value="Log In" style="color: rgb(181, 255, 173); background-color: rgb(173, 204, 255); border: 2px solid;">';
               document.getElementById("real").innerHTML += '<input type="submit" name="Registreren" value="Register" style="color: rgb(181, 255, 173); background-color: rgb(173, 204, 255); border: 2px solid;">';
               document.getElementById("real").innerHTML += '<p id="TextLogin" style="text-align = center; margin-top: -10px;"></p>';
